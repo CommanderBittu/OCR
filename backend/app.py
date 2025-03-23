@@ -7,7 +7,8 @@ from flask_cors import CORS
 import cv2
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://drishti-liart.vercel.app"}})
+
 
 app.config['UPLOAD_FOLDER'] = 'uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
